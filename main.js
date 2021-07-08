@@ -11,15 +11,13 @@ const returnData = (data) => {
     return resultBox.innerHTML = `
     <img src="${data.album.images[0].url}" alt="">
     <p>Track Title : ${data.name}</p>
-    <p>Artist : ${data.artists.name}</p>
-    <p>Album : ${data.album}</p>
+    <p>Artist : ${data.artists[0].name}</p>
+    <p>Album : ${data.album.name}</p>
     <button id="submit-button" type="submit">Select</button>
     `
 }
 
 fetch(apiUrl)
       .then((response) => response.json())
-      
-    //   .then(returnData(data))
       .then((data) => returnData(data));
 
