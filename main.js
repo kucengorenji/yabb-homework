@@ -19,5 +19,8 @@ const returnData = (data) => {
 
 fetch(apiUrl)
       .then((response) => response.json())
-      .then((data) => returnData(data));
+      .then((data) => returnData(data))
+      .catch((error) => {
+          alert("error", error);
+      });
 
